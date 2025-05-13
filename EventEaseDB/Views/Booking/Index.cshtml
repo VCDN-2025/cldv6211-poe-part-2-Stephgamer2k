@@ -1,0 +1,51 @@
+@model EventEaseDB.Models.ViewModels.BookingPageViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Bookings</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-action="Index" method="get">
+    @{
+        var searchTerm = Context.Request.Query["SearchItem"].ToString();
+    }
+
+    <form asp-action="Index" method="get">
+        <input type="text" name="SearchItem" value="@searchTerm" placeholder="Search bookings..." />
+        <button type="submit">Search</button>
+    </form>
+    <button type="submit">Search</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Booking ID</th>
+            <th>Event Name</th>
+            <th>Venue Name</th>
+            <th>Booking Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.DisplayBookings)
+        {
+            <tr>
+                <td>@item.BookingID</td>
+                <td>@item.EventName</td>
+                <td>@item.VenueName</td>
+                <td>@item.BookingDate?ToShortDateString()</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BookingID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.BookingID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.BookingID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

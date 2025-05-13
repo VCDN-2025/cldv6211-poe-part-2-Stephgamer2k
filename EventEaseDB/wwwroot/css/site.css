@@ -1,0 +1,74 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+
+button, .btn { 
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    
+}
+/*************************************************************
+* Title: CSS Buttons
+* Author: W3Schools
+* Date: 3 April 2025
+*
+*Availabilty: https://www.w3schools.com/css/css3_buttons.asp
+*************************************************************
+*/
+
+
+
+.navbar{
+    background-color:beige !important;
+    
+}
+
+button:hover, .btn:hover{
+    background: #0056b3;
+}
+
+
+body  {
+    background-image: url('/wall.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  
+}
+
+/*************************************************************
+* Title: CSS Multiple Backgrounds
+* Author: W3Schools
+* Date: 3 April 2025
+*
+*Availabilty: https://www.w3schools.com/css/css3_backgrounds.asp
+*************************************************************
+*/
+
+
+header {
+    background: transparent !important;
+}
+
+li{
+    color:beige !important;
+}
